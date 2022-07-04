@@ -373,9 +373,9 @@ async def play(_, message: Message):
     if int(chat_id) in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
-            photo="final.png",
-            caption=f"⌔ ***-›ضيفتهالك في قايمة الانتظار اهو حل عن دماغي بقا 🤓** `{pos}`\n\n⌔ **-› الاسم:** [{songname}]({link})| موسيقى`\n⌔**-› ايدي المحادثه:** `{chat_id}`\n⌔ **-› طلب الكائن دا:** {m.from_user.mention()}",
-            reply_markup=keyboard,
+            photo=f"{https://te.legra.ph/file/406ab4905f24e3959e28b.jpg}",
+                        caption=f"💡 ***-›تم اضافة الاغنيه لقائمة الانتظار** `{pos}`\n\n🏷 **-› الاسم:** [{songname}]({link})| موسيقى`\n💭**-› يدي المحادثه:** `{chat_id}`\n🎧 **-› طلب الكائن دا:** {m.from_user.mention()}",
+                        reply_markup=keyboard,
         )
     else:
         await clientbot.pytgcalls.join_group_call(
@@ -388,10 +388,19 @@ async def play(_, message: Message):
                 stream_type=StreamType().local_stream,
             )
 
-        await message.reply_photo(
-            photo="final.png",
-            reply_markup=keyboard,
-            caption=f"💡 ***-›شغلتهالك اهو ابسط مروق عليك خالص اهو 🤓😂** `{pos}`\n\n⌔ **-› الاسم:** [{songname}]({link})| موسيقى`\n⌔**-› ايدي المحادثه:** `{chat_id}`\n⌔ **-› طلب الكائن دا:** {m.from_user.mention()}",
+        add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+
+                        await suhu.delete()
+
+                        requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+
+                        await m.reply_photo(
+
+                            photo=f"{https://te.legra.ph/file/406ab4905f24e3959e28b.jpg}",
+
+                            caption=f"-› لحاله :تم التشغيل بنجاح\n⌔ -› الاسم: [{songname}]({link})\n⌔-› ايدي: {chat_id}`\n⌔ *الحاله:** تم التشغيل بنجاح`\n⌔ **-› طلب الكائن دا:** {requester}\n⌔ ** نِوِعٌ أّلَبِثّ:** `موسيقى",
+
+                            reply_markup=keyboard,
            )
 
     os.remove("final.png")
