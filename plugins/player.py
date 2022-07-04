@@ -34,8 +34,8 @@ chat_id = None
 useer = "NaN"
 
 themes = [
-    "Siria",
-    "Salah",
+    "Siria.png",
+    "Salah.png",
 ]
 
 def transcode(filename):
@@ -380,12 +380,12 @@ async def play(_, message: Message):
             )
 
         await message.reply_photo(
-            photo="final.png",
+            photo="siria.png",
             reply_markup=keyboard,
             caption="**⌔ تم تشغيل الاغنيه بنجاح ❤ ...**".format(),
            )
 
-    os.remove("final.png")
+    os.remove("siria.png")
     return await lel.delete()
     
     
