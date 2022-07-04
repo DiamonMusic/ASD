@@ -148,18 +148,18 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** تم دخولي هههه  ...**")
+                        message.chat.id, "** بخ انا جيت 😂  ...**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**نعتذر ياطيب الحساب المساعد محظور او مقيد من القروب  @{ASSISTANT_USERNAME} بتقدر تحكي مع مطوري لتحل المشكلة@{OWNER_USERNAME} ✨ **")
+                        f"**انا اسف يسطا الحساب المساعد محظور او مقيد من الجروب  @{ASSISTANT_USERNAME} بتقدر تتواصل مع مطوري علشان تحل المشكلة@{OWNER_USERNAME} ✨ **")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**نعتذر ياطيب الحساب المساعد محظور او مقيد من القروب  @{ASSISTANT_USERNAME} بتقدر تحكي مع مطوري لتحل المشكلة @{OWNER_USERNAME}) ✨ **")
+            f"**انا اسف يسطا بس الحساب المساعد محظور او مقيد من لجروب  @{ASSISTANT_USERNAME} بتقدر تتواصل مع مطوري علشان تحل المشكلة @{OWNER_USERNAME}) ✨ **")
         return
     
     audio = (
